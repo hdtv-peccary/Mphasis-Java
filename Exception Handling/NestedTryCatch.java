@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class NestedTryCatch {
     public static void main(String[] args) {
-        Logger logger = Logger.getLogger(Main.class.getName());
+        Logger logger = Logger.getLogger(NestedTryCatch.class.getName());
         try {
             System.out.println(2 / 1);
             try {

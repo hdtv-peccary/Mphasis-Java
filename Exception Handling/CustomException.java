@@ -19,7 +19,7 @@ import java.util.logging.Logger;
     }
     public class CustomException {
         public static void main(String []args){
-            Logger logger = Logger.getLogger(Main.class.getName());
+            Logger logger = Logger.getLogger(CustomException.class.getName());
             try {
                 new VotingRegistration().register(16);
             } catch (IllegalException e) {
