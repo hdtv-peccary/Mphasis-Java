@@ -1,7 +1,6 @@
 package com.mph.trade;
 
 import com.mph.book.MarketListener;
-import com.mph.book.Trader;
 
 public interface Exchange {
     public  String registerTrader(Trader trader);

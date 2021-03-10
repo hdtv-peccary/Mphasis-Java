@@ -1,4 +1,8 @@
-public class XchangeWorker {
+package com.mph.book;
+
+import com.mph.trade.Event;
+
+public class XchangeWorker implements Runnable {
     private Market market;
     private Event event;
 
@@ -36,7 +40,9 @@ public class XchangeWorker {
     }
 
     public void run(){
-
+//use event obj to obtain order,req type
+        //new market.add
+        //cancel and modify from market
     }
 
 }

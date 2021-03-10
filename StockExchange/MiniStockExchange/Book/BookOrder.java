@@ -6,6 +6,7 @@ public class BookOrder {
    private long remainingQuantity;
     private OrderBook book;
    private BuySell side;
+    //market ong instrument, long orderId, BuySell side,long price,long size
 
     public BookOrder(long price, OrderBook book, BuySell side,long size) {
         this.price = price;

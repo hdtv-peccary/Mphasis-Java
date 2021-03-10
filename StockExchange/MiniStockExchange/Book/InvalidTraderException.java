@@ -1,4 +1,4 @@
-package com.mpasis.exception;
+package com.mph.book;
 
 public class InvalidTraderException {
     private long serialVersionUID=1L;

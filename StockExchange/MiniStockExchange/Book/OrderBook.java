@@ -1,11 +1,15 @@
 package com.mph.book;
 
+import com.mph.trade.Order;
+
 import java.util.ArrayList;
 
 public class OrderBook {
     private long instrument;
     private long bids;
     private long asks;
+    //private TreeMap<Order> bids;
+    //private ArrayList<Order> asks;
 
     public OrderBook(long instrument) {
         this.instrument = instrument;
