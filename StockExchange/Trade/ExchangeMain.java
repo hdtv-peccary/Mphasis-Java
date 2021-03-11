@@ -1,14 +1,11 @@
 package com.mph.trade;
 
 
-import com.mph.book.BookOrder;
 import com.mph.book.BuySell;
-import com.mph.book.Market;
-import com.mph.book.OrderBook;
+
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+
 
 public class ExchangeMain {
     public static void main(String[] args) throws IOException {
@@ -17,21 +14,17 @@ public class ExchangeMain {
         MiniExchange ex = new MiniExchange();
         String result = ex.registerTrader(new Trader("priya","97898","addr1"));
         String result2 = ex.registerTrader(new Trader("ajay","97910","addr2"));
+        ex.registerTrader(new Trader("puja","1234","addr3"));
         System.out.println(result);
         System.out.println(result2);
         System.out.println(ex.getAllTraders());
         System.out.println(ex.updateTrader(new Trader("priya","8765","addr2","97898")));
 
-        ex.placeOrder(new Order("9456",13,4,3, BuySell.SELL ));
-        System.out.println(ex.getAllOrders());
-        //long orderId, BookOrder order, long quantity, long price){
-        //long price, OrderBook book, BuySell side,long size)
+
+       ex.placeOrder(new Order("3472","14",13,4,2, BuySell.SELL ));
 
 
-        OrderBook orderbook = new OrderBook(3);
-        BookOrder ob =new BookOrder(2,orderbook,BuySell.SELL,2);
-        Market m = new Market();
-        m.execute(12,ob,2,2);
+
 
     }
 
