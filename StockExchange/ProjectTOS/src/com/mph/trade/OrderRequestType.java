@@ -2,7 +2,7 @@ package com.mph.trade;
 
 public enum OrderRequestType {
 
-        NEW,
-        MODIFY,
-        CANCEL
+    NEW,
+    MODIFY,
+    CANCEL
 }

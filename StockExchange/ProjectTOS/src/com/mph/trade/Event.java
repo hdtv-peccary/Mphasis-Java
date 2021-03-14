@@ -1,15 +1,18 @@
 package com.mph.trade;
 
+
 public class Event {
 
     private Order order;
     private OrderRequestType requestType;
 
 
-
     public Event(Order order, OrderRequestType requestType) {
         this.order = order;
         this.requestType = requestType;
+    }
+
+    public Event() {
     }
 
     public Order getOrder() {
@@ -28,8 +31,6 @@ public class Event {
         this.requestType = requestType;
     }
 
-    public Event() {
-    }
 }
 
 

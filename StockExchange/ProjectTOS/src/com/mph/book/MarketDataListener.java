@@ -1,6 +1,6 @@
 package com.mph.book;
 
-public class MarketDataListener implements MarketListener{
+public class MarketDataListener implements MarketListener {
     private Market market;
 
     public MarketDataListener(Market market) {
@@ -8,17 +8,20 @@ public class MarketDataListener implements MarketListener{
     }
 
 
+    //TODO
     @Override
     public void update(OrderBook book) {
 
     }
 
+    //TODO
     @Override
     public void trade(OrderBook book, BuySell side, long price, long size) {
 
     }
 
-    public void printDepth(OrderBook book){
+    //TODO
+    public void printDepth(OrderBook book) {
 
     }
 }

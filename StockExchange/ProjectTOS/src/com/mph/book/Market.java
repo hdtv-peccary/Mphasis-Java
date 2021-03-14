@@ -3,6 +3,7 @@ package com.mph.book;
 import com.mph.trade.Event;
 import com.mph.trade.MiniExchange;
 import com.mph.trade.Order;
+
 import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -11,8 +12,8 @@ public class Market {
 
 
     private static final Logger LOGGER = Logger.getLogger("market");
-    private OrderBook books;// HashMap<orderid,Order>
-    private BookOrder orders;// HashMap<>
+    private OrderBook books;
+    private BookOrder orders;
     private MarketListener listener;
 
     private List<Order> orderList = new ArrayList<Order>();
@@ -22,53 +23,58 @@ public class Market {
 
     }
 
+    //TODO
     public void registerListener(MarketListener listener) {
 
     }
 
+    //TODO
     public OrderBook open(long securityId) {
         return null;
     }
 
+    //TODO
     public BookOrder find(long orderId) {
         return null;
     }
 
+    //TODO
     public void add(long instrument, long orderId, BuySell side, long price, long size) {
-//checks the orderid matches with orders hashmap
-//maintain the book orders
-        //add entry to orderbook
+
 
     }
 
+    //TODO
     public void doMatching(OrderBook book, boolean bbo, long orderId, long size, long price) {
 
     }
 
+    //TODO
     public void modify(long orderId, long size) {
 
     }
 
+    //TODO
     public long execute(long orderId, long quantity) {
         return 1L;
     }
 
+    //TODO
     public long execute(long orderId, long quantity, long price) {
         return 1l;
     }
 
+    //TODO
     public void execute(long orderId, BookOrder order, long quantity, long price) {
 
     }
 
     public synchronized void execute() {
-        long tradedOrderStockId = 0;
 
         this.orderList = MiniExchange.getAllOrders();
 
         System.out.println("List size from market " + MiniExchange.getAllOrders().size());
 
-//        trade each product in orderbook
         this.orderList
                 .stream().filter(o -> o.getSide().equals(BuySell.SELL))
                 .forEach(
@@ -90,7 +96,7 @@ public class Market {
                                         }
                                 ).sorted(Comparator.comparingLong(Order::getPrice)).findFirst();
 
-                                System.out.println("traded order "+tradedOrder);
+                                System.out.println("traded order " + tradedOrder);
                                 if (!tradedOrder.isPresent()) {
                                     System.out.println("no trade happened");
                                 } else {
@@ -103,7 +109,7 @@ public class Market {
                                     }
                                     System.out.println("product sell order " + product);
                                     MiniExchange.deleteOrder(BuyOrderId);
-                                    //tradedOrderStockId =product.getOrderId();
+
                                     LOGGER.info("traded order removed from orderList");
 
                                 }
@@ -111,36 +117,33 @@ public class Market {
                         });
 
 
-
         System.out.println("executed");
-        // return  tradedOrderStockId;
+
     }
 
 
-
-    public List<Order> getBuyOrdersForStock (long stockId) {
+    public List<Order> getBuyOrdersForStock(long stockId) {
 
         return this.orderList.stream().filter(e -> {
 
-            return ((e.getStockId()== stockId) && e.getSide().equals(BuySell.BUY));
+            return ((e.getStockId() == stockId) && e.getSide().equals(BuySell.BUY));
 
         }).collect(Collectors.toList());
     }
 
 
-
-
-    public long cancel(Event event){
+    //TODO
+    public long cancel(Event event) {
         return 1l;
     }
 
 
-
-    public void delete(long orderId){
+    //TODO
+    public void delete(long orderId) {
 
     }
 
-
+    //TODO
     public void modify(Event event) {
     }
 }

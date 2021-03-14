@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class XchangeWorker implements Runnable {
     Logger logger = Logger.getLogger("Xchange Worker");
-    private Market market=new Market();
+    private Market market = new Market();
     private Event event;
 
 
@@ -48,14 +48,13 @@ public class XchangeWorker implements Runnable {
 
     @Override
     public void run() {
-        if(event.getRequestType() == OrderRequestType.NEW){
+        if (event.getRequestType() == OrderRequestType.NEW) {
             market.execute();
-        }
-        else if(event.getRequestType() == OrderRequestType.CANCEL){
+        } else if (event.getRequestType() == OrderRequestType.CANCEL) {
             market.cancel(event);
-        }else if(event.getRequestType() == OrderRequestType.MODIFY){
+        } else if (event.getRequestType() == OrderRequestType.MODIFY) {
             market.modify(event);
-        }else{
+        } else {
             logger.info("Invalid Request Type");
             try {
                 throw new InvalidTraderException("Invalid Request Type");

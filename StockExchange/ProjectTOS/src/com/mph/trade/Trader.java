@@ -1,11 +1,13 @@
 package com.mph.trade;
 
-public class Trader {
+import java.io.Serializable;
 
-    String tradename;
-    String contactno;
-    String address;
-    String Traderid;
+public class Trader implements Serializable {
+
+    private String tradename;
+    private String contactno;
+    private String address;
+    private String Traderid;
 
     public String getTradename() {
         return tradename;

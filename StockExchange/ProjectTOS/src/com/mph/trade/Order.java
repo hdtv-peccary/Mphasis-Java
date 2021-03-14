@@ -2,7 +2,9 @@ package com.mph.trade;
 
 import com.mph.book.BuySell;
 
-public class Order {
+import java.io.Serializable;
+
+public class Order implements Serializable {
 
 
     public String traderId;
