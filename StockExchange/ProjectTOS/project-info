@@ -1,0 +1,57 @@
+Project: Mini Stock Exchange																	
+Mini stock exchange is an exchange where traders can buy and sell stocks. Example of stocks
+ are RELIANCE, YESBANK, MAJESCO, INFY etc																		
+ 																		
+1. Trader Registration																		
+a. API to Add/Update/Delete traders to exchange																		
+i. Each member will be assigned with a unique member code.																		
+ii. Using this code members can put orders to exchange																		
+iii. Request Structure																		
+Name	Type	Description																
+traderName	String	Name of the trader																
+contactNumber	String	Mobile Number																
+address	String	Address of the trader																
+iv. Response Structure																		
+Name	Type	Description																
+traderCode	String	Unique Code for trader																
+ 																		
+2. Market Management																		
+a. API to place Order																		
+i. Order Request Structure																		
+Name
+orderId
+Price	double	Price of stock																
+orderType	Enum(Buy/Sell)	Buy a stock or Sell a stock																
+Qty	Long	Qty of stock ordered																
+stockId	Long	Unique Identifier for each stock																
+ 																		
+b. API to delete Order																		
+i. Order Delete Structure																		
+Name	Type	Description																
+orderId
+orderIdToDelete	Long	Unique identifier for each Order																
+ 																		
+c. API to modify Order																		
+i. Order Modify Structure
+Name
+orderId
+orderIDToModify
+qty
+price																		
+ 																		
+3. Matching Engine (Core Java , Multithreading, Java Collections, Sorting )																		
+i. Engine to accept order																		
+ii. Keep all Order internally as Order Book																		
+iii. Each stockId have separate Order Book																		
+iv. Order Book has two sides																		
+ 																		
+1. Buy Side and Sell Side																		
+2. All Buy Order against a stock is kept in Buy Side of the Book																		
+3. All Sell Order against a stock is kept in Sell Side of the Book																		
+4. Buy Book is sorted based on descending order of price																		
+5. Sell Book is sorted based on ascending order of price																		
+6. When an Order reaches exchange, matching engine should match the order in in book
+ and update accordingly.																		
+7. When a matching is found with buy and sell order in book, a trade message should
+ be broadcast via broadcast feature given below.																		
+																		
